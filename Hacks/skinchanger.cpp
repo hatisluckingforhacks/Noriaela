@@ -255,6 +255,17 @@ void HSequenceProxyFn(const CRecvProxyData *pDataConst, void *pStruct, void *pOu
                     default:
                         m_nSequence--;
                 }   
+            } else if (!strcmp(model_filename, "models/weapons/v_knife_ursus.mdl")) {
+                switch (m_nSequence) {
+                    case SEQUENCE_DEFAULT_DRAW:
+                        m_nSequence = RandomSequence(SEQUENCE_BUTTERFLY_DRAW, SEQUENCE_BUTTERFLY_DRAW2);
+                        break;
+                    case SEQUENCE_DEFAULT_LOOKAT01:
+                        m_nSequence = RandomSequence(SEQUENCE_BUTTERFLY_LOOKAT01, 14);
+                        break;
+                    default:
+                        m_nSequence++;
+                }
             }
             pData->m_Value.m_Int = m_nSequence;
         }
