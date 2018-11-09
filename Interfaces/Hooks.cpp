@@ -1,4 +1,6 @@
 #include "../main.h"
+#include "../Hooks/index.h" // Index IDs
+// Hacks
 #include "../Hacks/skinchanger.h"
 
 void InitializeInterfaces() {
@@ -23,17 +25,18 @@ void InitializeVMTs() {
 extern bool hkFireEventClientSide(void* thisptr, IGameEvent* event);
 
 void InitializeHooks() {
-    game_event_vmt->HookVM((void*)hkFireEventClientSide, 11);
+    game_event_vmt->HookVM((void*)hkFireEventClientSide, FireGameEventIndex);
     game_event_vmt->ApplyVMT();
-    client_vmt->HookVM((void*)hkFrameStage, 37);
+    client_vmt->HookVM((void*)hkFrameStage, FrameStageIndex);
     client_vmt->ApplyVMT();
 
     g_pSequence = (RecvVarProxyFn)NetVarManager::HookProp("DT_BaseViewModel", "m_nSequence", HSequenceProxyFn);
+    pCvar->ConsoleColorPrintf(Color::Green(),   "Successfully injected Noriaela\n");
+
 }
 
 void PrintInfo() {
-    pCvar->ConsoleColorPrintf(Color::Yellow(),   "Noriaela Version 2\n");
-    pCvar->ConsoleColorPrintf(Color::Yellow(),   "Coded by :\n");
-    pCvar->ConsoleColorPrintf(Color::Yellow(),   "Warlauke\n");
-    pCvar->ConsoleColorPrintf(Color::Red(),      "New update with new knives\n");
+    pCvar->ConsoleColorPrintf(Color::Yellow(),  "Noriaela Version 2\n");
+    pCvar->ConsoleColorPrintf(Color::Yellow(),  "Coded by :\n");
+    pCvar->ConsoleColorPrintf(Color::Green(),   "Warlauke\n");
 }

@@ -34,6 +34,8 @@
 
 using namespace std;
 
+#include "Hooks/index.h"
+
 #include "SDK/Vector.h"
 #include "SDK/Others.h"
 #include "SDK/common.h"
