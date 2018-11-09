@@ -47,8 +47,8 @@ void Config::SaveSkins() {
 
     skins_cfg.SetDoubleValue("Knife", "CT Knife", GetFloatValue(skin.KnifeCT));    
     skins_cfg.SetDoubleValue("Knife", "T Knife", GetFloatValue(skin.KnifeT));
-    skins_cfg.SetDoubleValue("Knife", "CT Knife ID", GetFloatValue(skin.CTKnifeID));
-    skins_cfg.SetDoubleValue("Knife", "T Knife ID", GetFloatValue(skin.TKnifeID));
+    skins_cfg.SetDoubleValue("Knife", "CT Knife ID", GetFloatValue(skin.KnifeID));
+    skins_cfg.SetDoubleValue("Knife", "T Knife ID", GetFloatValue(skin.KnifeID));
     
     skins_cfg.SetDoubleValue("Rifles", "Galil", GetFloatValue(skin.galil));
     skins_cfg.SetDoubleValue("Rifles", "Famas", GetFloatValue(skin.famas));
@@ -98,10 +98,10 @@ void Config::LoadSkins() {
     skins_cfg.SetUnicode(true);
     skins_cfg.LoadFile(skins.c_str());
     
-    skin.KnifeCT    = skin_cfgget_f("Knife", "T Knife");
-    skin.KnifeCT   = skin_cfgget_f("Knife", "CT Knife");
-    skin.TKnifeID   = skin_cfgget_f("Knife", "T Knife ID");
-    skin.CTKnifeID  = skin_cfgget_f("Knife", "CT Knife ID");
+    skin.KnifeCT = skin_cfgget_f("Knife", "T Knife");
+    skin.KnifeCT = skin_cfgget_f("Knife", "CT Knife");
+    skin.KnifeID = skin_cfgget_f("Knife", "T Knife ID");
+    skin.KnifeID = skin_cfgget_f("Knife", "CT Knife ID");
 
     skin.galil   = skin_cfgget_f("Rifles", "Galil");
     skin.famas   = skin_cfgget_f("Rifles", "Famas");

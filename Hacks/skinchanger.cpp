@@ -9,8 +9,8 @@ bool skinsLoaded = false;
 unordered_map<int, cSkin> cSkinchanger::SkinList = unordered_map<int, cSkin>( {
 	/* https://github.com/sonicrules11/CSGO-skin-ID-dumper/blob/master/item_index.txt */
 	// make_pair(WEAPON, cSkin(SKIN, Seed, -1, Stattrak, Entity Quality, (char*)("Name") or nullptr for no name, Wear)),
-    make_pair(WEAPON_KNIFE, cSkin(skin.CTKnifeID, -1, Knife, -1, 3, nullptr, 0.0001f)),
-    make_pair(WEAPON_KNIFE_T, cSkin(skin.TKnifeID, -1, KnifeT, -1, 3, nullptr, 0.0001f)),
+    make_pair(WEAPON_KNIFE, cSkin(skin.KnifeID, -1, Knife, -1, 3, nullptr, 0.0001f)),
+    make_pair(WEAPON_KNIFE_T, cSkin(skin.KnifeID, -1, KnifeT, -1, 3, nullptr, 0.0001f)),
 	// Pistols
 	make_pair(WEAPON_CZ75A, cSkin(skin.cz, -1, -1, -1, 0, nullptr, 0.0001f)),
 	make_pair(WEAPON_DEAGLE, cSkin(skin.deagle, -1, -1, -1, 0, nullptr, 0.0001f)),
@@ -25,7 +25,7 @@ unordered_map<int, cSkin> cSkinchanger::SkinList = unordered_map<int, cSkin>( {
 	// Rifles
 	make_pair(WEAPON_AK47, cSkin(skin.ak47, -1, -1, -1, 0, (char*)("My Love"), 0.0001f)),
 	make_pair(WEAPON_AUG, cSkin(skin.aug, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_AWP, cSkin(skin.awp, -1, -1, -1, 12, (char*)("I sucked cock for this"), 0.4202f)),
+	make_pair(WEAPON_AWP, cSkin(skin.awp, -1, -1, -1, 12, nullptr, 0.4202f)),
 	make_pair(WEAPON_FAMAS, cSkin(skin.famas, -1, -1, -1, 0, nullptr, 0.0001f)),
 	make_pair(WEAPON_G3SG1, cSkin(skin.g3, -1, -1, -1, 0, nullptr, 0.0001f)),
 	make_pair(WEAPON_M4A1_SILENCER, cSkin(skin.m4a1, -1, -1, -1, 0, nullptr, 0.0001f)),
@@ -73,8 +73,8 @@ void cSkinchanger::FindModels() {
     ModelList[pModelInfo->GetModelIndex("models/weapons/v_knife_default_t.mdl")] = KnifeToModelMatrix[KnifeT].c_str();
 }
 
-void cSkinchanger::LoadSkinsConfig() {
-}
+/*void cSkinchanger::LoadSkinsConfig() {
+}*/
 
 void cSkinchanger::ForceSkins() {
     IEngineClient::player_info_t player_info;

@@ -58,11 +58,9 @@ public:
     void FindModels();
     void Init();
     void ForceSkins();
-    void LoadSkinsConfig();
+    //void LoadSkinsConfig();
     void FrameStageNotify(ClientFrameStage_t stage);
     auto updateSkins() -> void;
-    bool shouldUpdate = false;
-    bool forceFullUpdate = false;
 
     C_BaseEntity* pLocalPlayer = nullptr;
 

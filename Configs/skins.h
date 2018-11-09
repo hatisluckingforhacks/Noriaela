@@ -2,20 +2,24 @@
 
 class SkinList {
 public:
-	int KnifeCT		= WEAPON_KNIFE_STILETTO;
-	int KnifeT 		= WEAPON_KNIFE_STILETTO;
-	int CTKnifeID	= 38;
-	int TKnifeID	= 38;
+    // Gloves
+    int GloveCT     = // Glovehere
+    int GloveT      = // Glovehere
+    int GloveID     = // Glove Skin Here
+    // Knives
+	int KnifeCT		= WEAPON_KNIFE_KARAMBIT;
+	int KnifeT 		= WEAPON_KNIFE_KARAMBIT;
+	int KnifeID    	= 419;
 	// Rifles
     int galil   = 661;
     int famas   = 604;
-    int ak47    = 490;
-    int m4a4    = 155;
+    int ak47    = 316;
+    int m4a4    = 695;
     int m4a1    = 663;
-    int scout   = 304;
+    int scout   = 624;
     int sg      = 200;
     int aug     = 455;
-    int awp     = 344;
+    int awp     = 84;
     int g3      = 606;
     int scar    = 642;
     // Pistols
@@ -26,7 +30,7 @@ public:
     int p250    = 668;
     int tec9    = 671;
     int five7   = 44;
-    int cz      = 350;
+    int cz      = 297;
     int deagle  = 397;
     int revolver= 12;
     // SMGs
