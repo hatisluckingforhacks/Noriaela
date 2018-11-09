@@ -2,7 +2,7 @@
 
 class SkinList {
 public:
-    // Gloves
+    // Gloves (Added for future use)
     int GloveCT     = // Glovehere
     int GloveT      = // Glovehere
     int GloveID     = // Glove Skin Here
