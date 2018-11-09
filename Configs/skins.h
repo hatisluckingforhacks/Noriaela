@@ -3,9 +3,9 @@
 class SkinList {
 public:
     // Gloves (Added for future use)
-    int GloveCT     = // Glovehere
-    int GloveT      = // Glovehere
-    int GloveID     = // Glove Skin Here
+    int GloveCT     = 0; // Glovehere
+    int GloveT      = 0;// Glovehere
+    int GloveID     = 0;// Glove Skin Here
     // Knives
 	int KnifeCT		= WEAPON_KNIFE_KARAMBIT;
 	int KnifeT 		= WEAPON_KNIFE_KARAMBIT;
