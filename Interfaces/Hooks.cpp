@@ -32,7 +32,6 @@ void InitializeHooks() {
 
     g_pSequence = (RecvVarProxyFn)NetVarManager::HookProp("DT_BaseViewModel", "m_nSequence", HSequenceProxyFn);
     pCvar->ConsoleColorPrintf(Color::Green(),   "Successfully injected Noriaela\n");
-
 }
 
 void PrintInfo() {

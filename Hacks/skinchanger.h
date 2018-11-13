@@ -58,9 +58,7 @@ public:
     void FindModels();
     void Init();
     void ForceSkins();
-    //void LoadSkinsConfig();
     void FrameStageNotify(ClientFrameStage_t stage);
-    auto updateSkins() -> void;
 
     C_BaseEntity* pLocalPlayer = nullptr;
 

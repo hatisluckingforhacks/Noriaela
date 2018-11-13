@@ -6,7 +6,6 @@ Requirements:
 * cmake
 * Shared library injector
 * [Homebrew](https://brew.sh)
-* [Library injector](https://github.com/scen/osxinj) (I'm suggesting this not saying only this will work, I will not explain how to build it)
 
 To generate the project files:
 

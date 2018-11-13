@@ -1,53 +1,49 @@
 #include "skinchanger.h"
-#include "../Configs/skins.h"
-#include "../Configs/Config.h"
 
-int Knife = skin.KnifeCT; // Change knife models skins.h
-int KnifeT = skin.KnifeT; // Change knife models skins.h
+int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
+int KnifeT = WEAPON_KNIFE_BAYONET;
 bool skinsLoaded = false;
 
 unordered_map<int, cSkin> cSkinchanger::SkinList = unordered_map<int, cSkin>( {
 	/* https://github.com/sonicrules11/CSGO-skin-ID-dumper/blob/master/item_index.txt */
-	// make_pair(WEAPON, cSkin(SKIN, Seed, -1, Stattrak, Entity Quality, (char*)("Name") or nullptr for no name, Wear)),
-    make_pair(WEAPON_KNIFE, cSkin(skin.KnifeID, -1, Knife, -1, 3, nullptr, 0.0001f)),
-    make_pair(WEAPON_KNIFE_T, cSkin(skin.KnifeID, -1, KnifeT, -1, 3, nullptr, 0.0001f)),
+	// make_pair(WEAPON, cSkin(Skin, Seed, -1, Stattrak, Entity Quality, (char*)("Name") or nullptr for no name, Wear)),
+    make_pair(WEAPON_KNIFE, cSkin(419, -1, KnifeCT, -1, 3, (char*)("Period Blood"), 0.0001f)), // Ruby Doppler
+    make_pair(WEAPON_KNIFE_T, cSkin(38, -1, KnifeT, -1, 3, (char*)("I'm faded"), 0.0001f)), // Fade
 	// Pistols
-	make_pair(WEAPON_CZ75A, cSkin(skin.cz, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_DEAGLE, cSkin(skin.deagle, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_ELITE, cSkin(skin.dual, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_FIVESEVEN, cSkin(skin.five7, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_GLOCK, cSkin(skin.glock, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_HKP2000, cSkin(skin.p2000, -1, -1, -1, 0, nullptr, 0.0001f)), // P2000
-	make_pair(WEAPON_P250, cSkin(skin.p250, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_REVOLVER, cSkin(skin.revolver, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_TEC9, cSkin(skin.tec9, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_USP_SILENCER, cSkin(skin.usp, -1, -1, -1, 0, nullptr, 0.0001f)),
+	make_pair(WEAPON_DEAGLE, cSkin(397, -1, -1, -1, 0, nullptr, 0.0001f)), // Naga
+	make_pair(WEAPON_ELITE, cSkin(658, -1, -1, -1, 0, nullptr, 0.0001f)), // Cobra Strike
+	make_pair(WEAPON_FIVESEVEN, cSkin(44, -1, -1, -1, 0, nullptr, 0.0001f)), // Case Hardended
+	make_pair(WEAPON_GLOCK, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade
+	make_pair(WEAPON_HKP2000, cSkin(71, -1, -1, -1, 0, nullptr, 0.0001f)), // Scorpion (P2000)
+	make_pair(WEAPON_P250, cSkin(668, -1, -1, -1, 0, nullptr, 0.0001f)), // Red Rock
+	make_pair(WEAPON_TEC9, cSkin(671, -1, -1, -1, 0, nullptr, 0.0001f)), // Cut Out
+	make_pair(WEAPON_USP_SILENCER, cSkin(657, -1, -1, -1, 0, nullptr, 0.0001f)), // Blueprint
 	// Rifles
-	make_pair(WEAPON_AK47, cSkin(skin.ak47, -1, -1, -1, 0, (char*)("My Love"), 0.0001f)),
-	make_pair(WEAPON_AUG, cSkin(skin.aug, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_AWP, cSkin(skin.awp, -1, -1, -1, 12, nullptr, 0.4202f)),
-	make_pair(WEAPON_FAMAS, cSkin(skin.famas, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_G3SG1, cSkin(skin.g3, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_M4A1_SILENCER, cSkin(skin.m4a1, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_M4A1, cSkin(skin.m4a4, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_SCAR20, cSkin(skin.scar, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_SG556, cSkin(skin.sg, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_SSG08, cSkin(skin.scout, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_GALILAR, cSkin(skin.galil, -1, -1, -1, 0, nullptr, 0.0001f)),
+	make_pair(WEAPON_AK47, cSkin(316, -1, -1, -1, 0, (char*)("My Love"), 0.0001f)), // Jaguar
+	make_pair(WEAPON_AUG, cSkin(455, -1, -1, -1, 0, nullptr, 0.0001f)), // Akihabara Accept
+	make_pair(WEAPON_AWP, cSkin(279, -1, -1, -1, 12, nullptr, 0.4202f)), // Asiimov
+	make_pair(WEAPON_FAMAS, cSkin(604, -1, -1, -1, 0, nullptr, 0.0001f)), // Roll Cage
+	make_pair(WEAPON_G3SG1, cSkin(606, -1, -1, -1, 0, nullptr, 0.0001f)), // Ventilator 
+	make_pair(WEAPON_M4A1_SILENCER, cSkin(663, -1, -1, -1, 0, nullptr, 0.0001f)), // Breifing
+	make_pair(WEAPON_M4A1, cSkin(695, -1, -1, -1, 0, nullptr, 0.0001f)), // Neo-Noir
+	make_pair(WEAPON_SCAR20, cSkin(642, -1, -1, -1, 0, nullptr, 0.0001f)), // Blueprint
+	make_pair(WEAPON_SG556, cSkin(200, -1, -1, -1, 0, nullptr, 0.0001f)), // Mayan Dreams
+	make_pair(WEAPON_SSG08, cSkin(624, -1, -1, -1, 0, (char*)("Chinese Dragonlore"), 0.0001f)), // Dragonfire
+	make_pair(WEAPON_GALILAR, cSkin(661, -1, -1, -1, 0, nullptr, 0.0001f)), // Sugar Rush
 	// SMGs
-	make_pair(WEAPON_MAC10, cSkin(skin.mac10, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_MP7, cSkin(skin.mp7, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_MP9, cSkin(skin.mp9, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_P90, cSkin(skin.p90, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_UMP45, cSkin(skin.ump, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_BIZON, cSkin(skin.bizon, -1, -1, -1, 0, nullptr, 0.0001f)),
+	make_pair(WEAPON_MAC10, cSkin(433, -1, -1, -1, 0, nullptr, 0.0001f)), // Neon Rider
+	make_pair(WEAPON_MP7, cSkin(627, -1, -1, -1, 0, nullptr, 0.0001f)), // Cirrus
+	make_pair(WEAPON_MP9, cSkin(549, -1, -1, -1, 0, nullptr, 0.0001f)), // MP9
+	make_pair(WEAPON_P90, cSkin(636, -1, -1, -1, 0, nullptr, 0.0001f)), // Shallow Grave
+	make_pair(WEAPON_UMP45, cSkin(436, -1, -1, -1, 0, nullptr, 0.0001f)), // Grand Prix
+	make_pair(WEAPON_BIZON, cSkin(203, -1, -1, -1, 0, nullptr, 0.0001f)), // Rust Coat
 	// Heavy
-	make_pair(WEAPON_MAG7, cSkin(skin.mag7, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_NOVA, cSkin(skin.nova, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_SAWEDOFF, cSkin(skin.sawed, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_XM1014, cSkin(skin.xm, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_M249, cSkin(skin.m249, -1, -1, -1, 0, nullptr, 0.0001f)),
-	make_pair(WEAPON_NEGEV, cSkin(skin.negev, -1, -1, -1, 0, nullptr, 0.0001f)),	
+	make_pair(WEAPON_MAG7, cSkin(666, -1, -1, -1, 0, nullptr, 0.0001f)), // Hard Water
+	make_pair(WEAPON_NOVA, cSkin(590, -1, -1, -1, 0, nullptr, 0.0001f)), // Exo
+	make_pair(WEAPON_SAWEDOFF, cSkin(638, -1, -1, -1, 0, nullptr, 0.0001f)), // Wasteland Princess 
+	make_pair(WEAPON_XM1014, cSkin(654, -1, -1, -1, 0, nullptr, 0.0001f)), // 654
+	make_pair(WEAPON_M249, cSkin(648, -1, -1, -1, 0, nullptr, 0.0001f)), // Emerald Posion Dart
+	make_pair(WEAPON_NEGEV, cSkin(483, -1, -1, -1, 0, nullptr, 0.0001f)), // Loudmouth
 });
 
 unordered_map<int, const char*> cSkinchanger::ModelList;
@@ -69,12 +65,9 @@ void cSkinchanger::FrameStageNotify(ClientFrameStage_t stage) {
 }
 
 void cSkinchanger::FindModels() {
-    ModelList[pModelInfo->GetModelIndex("models/weapons/v_knife_default_ct.mdl")] = KnifeToModelMatrix[Knife].c_str();
+    ModelList[pModelInfo->GetModelIndex("models/weapons/v_knife_default_ct.mdl")] = KnifeToModelMatrix[KnifeCT].c_str();
     ModelList[pModelInfo->GetModelIndex("models/weapons/v_knife_default_t.mdl")] = KnifeToModelMatrix[KnifeT].c_str();
 }
-
-/*void cSkinchanger::LoadSkinsConfig() {
-}*/
 
 void cSkinchanger::ForceSkins() {
     IEngineClient::player_info_t player_info;
@@ -99,8 +92,8 @@ void cSkinchanger::ForceSkins() {
                 if(attributableItem){
                     int* Definition = attributableItem->GetItemDefinitionIndex();
 
-                    unordered_map<int, cSkin>::iterator SkinIter = (*Definition == WEAPON_KNIFE_T ? SkinList.find(WEAPON_KNIFE) : SkinList.find(*Definition));
-
+					unordered_map<int, cSkin>::iterator SkinIter = (*Definition == WEAPON_KNIFE ? (*Definition == WEAPON_KNIFE ? SkinList.find(WEAPON_KNIFE) : SkinList.find(WEAPON_KNIFE_T)) : SkinList.find(*Definition));
+                    
                     if(SkinIter != SkinList.end()) {
                         if(*attributableItem->GetOriginalOwnerXuidLow() == player_info.xuidlow && *attributableItem->GetOriginalOwnerXuidHigh() == player_info.xuidhigh){
 
@@ -114,8 +107,8 @@ void cSkinchanger::ForceSkins() {
 
                             cSkin skin = move(SkinIter->second);
 
-                            if(Knife && (*Definition == WEAPON_KNIFE))
-                                *attributableItem->GetItemDefinitionIndex() = Knife;
+                            if(KnifeCT && (*Definition == WEAPON_KNIFE))
+                                *attributableItem->GetItemDefinitionIndex() = KnifeCT;
                             else if(KnifeT && (*Definition == WEAPON_KNIFE_T))
                                 *attributableItem->GetItemDefinitionIndex() = KnifeT;
 
