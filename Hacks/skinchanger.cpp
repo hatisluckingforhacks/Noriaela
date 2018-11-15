@@ -1,7 +1,7 @@
 #include "skinchanger.h"
 
-int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
-int KnifeT = WEAPON_KNIFE_BAYONET;
+int KnifeCT = WEAPON_KNIFE_STILETTO;
+int KnifeT = WEAPON_KNIFE_WIDOWMAKER;
 bool skinsLoaded = false;
 
 unordered_map<int, cSkin> cSkinchanger::SkinList = unordered_map<int, cSkin>( {
@@ -10,18 +10,18 @@ unordered_map<int, cSkin> cSkinchanger::SkinList = unordered_map<int, cSkin>( {
     make_pair(WEAPON_KNIFE, cSkin(419, -1, KnifeCT, -1, 3, (char*)("Period Blood"), 0.0001f)), // Ruby Doppler
     make_pair(WEAPON_KNIFE_T, cSkin(38, -1, KnifeT, -1, 3, (char*)("I'm faded"), 0.0001f)), // Fade
 	// Pistols
-	make_pair(WEAPON_DEAGLE, cSkin(397, -1, -1, -1, 0, nullptr, 0.0001f)), // Naga
-	make_pair(WEAPON_ELITE, cSkin(658, -1, -1, -1, 0, nullptr, 0.0001f)), // Cobra Strike
+	make_pair(WEAPON_DEAGLE, cSkin(711, -1, -1, -1, 0, nullptr, 0.0001f)), // Code Red
+	make_pair(WEAPON_ELITE, cSkin(710, -1, -1, -1, 0, nullptr, 0.0001f)), // Shred
 	make_pair(WEAPON_FIVESEVEN, cSkin(44, -1, -1, -1, 0, nullptr, 0.0001f)), // Case Hardended
 	make_pair(WEAPON_GLOCK, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade
-	make_pair(WEAPON_HKP2000, cSkin(71, -1, -1, -1, 0, nullptr, 0.0001f)), // Scorpion (P2000)
-	make_pair(WEAPON_P250, cSkin(668, -1, -1, -1, 0, nullptr, 0.0001f)), // Red Rock
-	make_pair(WEAPON_TEC9, cSkin(671, -1, -1, -1, 0, nullptr, 0.0001f)), // Cut Out
+	make_pair(WEAPON_HKP2000, cSkin(211, -1, -1, 1337, 0, nullptr, 0.0001f)), // Ocean Foam (P2000)
+	make_pair(WEAPON_P250, cSkin(102, -1, -1, -1, 0, nullptr, 0.0001f)), // Whiteout
+	make_pair(WEAPON_TEC9, cSkin(36, -1, -1, -1, 0, nullptr, 0.0001f)), // Ossified
 	make_pair(WEAPON_USP_SILENCER, cSkin(657, -1, -1, -1, 0, nullptr, 0.0001f)), // Blueprint
 	// Rifles
-	make_pair(WEAPON_AK47, cSkin(316, -1, -1, -1, 0, (char*)("My Love"), 0.0001f)), // Jaguar
-	make_pair(WEAPON_AUG, cSkin(455, -1, -1, -1, 0, nullptr, 0.0001f)), // Akihabara Accept
-	make_pair(WEAPON_AWP, cSkin(279, -1, -1, -1, 12, nullptr, 0.4202f)), // Asiimov
+	make_pair(WEAPON_AK47, cSkin(316, -1, -1, -1, 0, (char*)("PussyDestroyer15"), 0.0001f)), // Jaguar
+	make_pair(WEAPON_AUG, cSkin(455, -1, -1, -1, 0, (char*)("Nico Nico Nii"), 0.0001f)), // Akihabara Accept
+	make_pair(WEAPON_AWP, cSkin(279, -1, -1, -1, 0, nullptr, 0.99f)), // Asiimov
 	make_pair(WEAPON_FAMAS, cSkin(604, -1, -1, -1, 0, nullptr, 0.0001f)), // Roll Cage
 	make_pair(WEAPON_G3SG1, cSkin(606, -1, -1, -1, 0, nullptr, 0.0001f)), // Ventilator 
 	make_pair(WEAPON_M4A1_SILENCER, cSkin(663, -1, -1, -1, 0, nullptr, 0.0001f)), // Breifing
@@ -259,6 +259,12 @@ void HSequenceProxyFn(const CRecvProxyData *pDataConst, void *pStruct, void *pOu
                     default:
                         m_nSequence++;
                 }
+            } else if (!strcmp(model_filename, "models/weapons/v_knife_stiletto.mdl")) {
+            	switch (m_nSequence){
+            		case SEQUENCE_DEFAULT_LOOKAT01:
+            			m_nSequence = RandomSequence(12, 13);
+            			break;
+            	}
             }
             pData->m_Value.m_Int = m_nSequence;
         }

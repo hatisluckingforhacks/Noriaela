@@ -33,7 +33,7 @@ public:
         {WEAPON_KNIFE_SURVIVAL_BOWIE, "models/weapons/v_knife_survival_bowie.mdl"}, // Bowie Knife 
         {WEAPON_KNIFE_BUTTERFLY, "models/weapons/v_knife_butterfly.mdl"}, // Butterfly Knife 
         {WEAPON_KNIFE_PUSH, "models/weapons/v_knife_push.mdl"}, // Shadow Daggers 
-		{WEAPON_KNIFE_URSUS, "models/weapons/v_knife_ursus.mdl"}, // Ursus Knife Pull out is broken
+		{WEAPON_KNIFE_URSUS, "models/weapons/v_knife_ursus.mdl"}, // Ursus Knife
 		{WEAPON_KNIFE_GYPSY_JACKKNIFE, "models/weapons/v_knife_gypsy_jackknife.mdl"}, // Navaja Knife
 		{WEAPON_KNIFE_STILETTO, "models/weapons/v_knife_stiletto.mdl"}, // Stiletto Knife
 		{WEAPON_KNIFE_WIDOWMAKER, "models/weapons/v_knife_widowmaker.mdl"}, // Talon Knife (Inspect animation is broken)
