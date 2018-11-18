@@ -95,7 +95,7 @@ void cSkinchanger::ForceSkins() {
             for(int i = 0; pWeapons[i]; i++){
                 C_BaseAttributableItem* attributableItem = (C_BaseAttributableItem*)pEntList->GetClientEntityFromHandle(pWeapons[i]);
                 if(attributableItem) {
-                    int* Definition = attributableItem->GetItemDefinitionIndex();
+                    short* Definition = attributableItem->GetItemDefinitionIndex();
 
 					unordered_map<int, cSkin>::iterator SkinIter = (*Definition == WEAPON_KNIFE ? (*Definition == WEAPON_KNIFE ? Skins.find(WEAPON_KNIFE) : Skins.find(WEAPON_KNIFE_T)) : Skins.find(*Definition));
 

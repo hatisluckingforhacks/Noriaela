@@ -281,8 +281,8 @@ public:
 
 class C_BaseAttributableItem : public C_BaseEntity {
 public:
-    int* GetItemDefinitionIndex() {
-        return (int*)((uintptr_t)this + offsets.DT_BaseAttributableItem.m_iItemDefinitionIndex);
+    short* GetItemDefinitionIndex() {
+        return (short*)((uintptr_t)this + offsets.DT_BaseAttributableItem.m_iItemDefinitionIndex);
     } 
     int* GetItemIDHigh() {
         return (int*)((uintptr_t)this + offsets.DT_BaseAttributableItem.m_iItemIDHigh);
