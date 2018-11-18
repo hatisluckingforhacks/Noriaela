@@ -7,5 +7,5 @@ bool hkFireEventClientSide(void* thisptr, IGameEvent* event){
     if(event){
         skinchanger->FireEventClientSide(event);
     }
-    return game_event_vmt->GetOriginalMethod<tFireGameEvent>(FireGameEventIndex)(thisptr, event);
+    return GameEventVMT->GetOriginalMethod<tFireGameEvent>(FireGameEventIndex)(thisptr, event);
 }

@@ -17,30 +17,28 @@ void InitializeInterfaces() {
 }
 
 void InitializeVMTs() {
-    game_event_vmt = new VMT(pGameEventManager);
-    testvmt = new VMT(pPanel);
-    client_vmt = new VMT(pClient);
+    GameEventVMT = new VMT(pGameEventManager);
+    ClientVMT = new VMT(pClient);
     
     void* handle = dlopen("./csgo/bin/osx64/client_panorama.dylib", RTLD_NOLOAD | RTLD_NOW);
     RandomInt = reinterpret_cast<RandomIntFn>(dlsym(handle, "RandomInt"));
     dlclose(handle);
 }
 
-extern bool hkFireEventClientSide(void* thisptr, IGameEvent* event);
-
 void InitializeHooks() {
-    game_event_vmt->HookVM((void*)hkFireEventClientSide, FireGameEventIndex);
-    game_event_vmt->ApplyVMT();
-    client_vmt->HookVM((void*)hkFrameStage, FrameStageIndex);
-    client_vmt->ApplyVMT();
+    GameEventVMT->HookVM((void*)hkFireEventClientSide, FireGameEventIndex);
+    GameEventVMT->ApplyVMT();
+    ClientVMT->HookVM((void*)hkFrameStage, FrameStageIndex);
+    ClientVMT->ApplyVMT();
 
     g_pSequence = (RecvVarProxyFn)NetVarManager::HookProp("DT_BaseViewModel", "m_nSequence", HSequenceProxyFn);
     pCvar->ConsoleColorPrintf(Color::Green(),   "Successfully injected Noriaela\n");
 }
 
 void PrintInfo() {
-    pCvar->ConsoleColorPrintf(Color::Red(), "Noriaela Version 3\n");
-    pCvar->ConsoleColorPrintf(Color::Red(), "Coded by :\n");
-    pCvar->ConsoleColorPrintf(Color::Red(), "Warlauke\n");
-    pCvar->ConsoleColorPrintf(Color::Green(), "Gloves added.\n");
+    pCvar->ConsoleColorPrintf(Color::Red(),     "Noriaela Version");
+    pCvar->ConsoleColorPrintf(Color::Green(),   " 3\n");
+    pCvar->ConsoleColorPrintf(Color::Red(),     "Coded by :\n");
+    pCvar->ConsoleColorPrintf(Color::Red(),     "Warlauke\n");
+    pCvar->ConsoleColorPrintf(Color::Green(),   "Gloves added.\n");
 }

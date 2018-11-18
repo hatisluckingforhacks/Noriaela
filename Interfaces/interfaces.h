@@ -13,7 +13,6 @@ extern IGameEventManager2* pGameEventManager;
 extern RandomIntFn RandomInt;
 
 extern RecvVarProxyFn g_pSequence;
-extern VMT* game_event_vmt;
-extern VMT* testvmt;
-extern VMT* client_vmt;
-extern VMT* input_vmt;
+
+extern VMT* GameEventVMT;
+extern VMT* ClientVMT;

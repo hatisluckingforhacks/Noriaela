@@ -17,7 +17,5 @@ RecvVarProxyFn g_pSequence  = nullptr;
 RandomIntFn RandomInt;
 
 
-VMT* game_event_vmt = nullptr;
-VMT* testvmt = nullptr;
-VMT* client_vmt = nullptr;
-VMT* input_vmt = nullptr;
+VMT* GameEventVMT = nullptr;
+VMT* ClientVMT = nullptr;

@@ -2,8 +2,8 @@
 
 int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
 int KnifeT = WEAPON_KNIFE_BAYONET;
-int GloveCT = GLOVE_STUDDED_BLOODHOUND;
-int GloveT = GLOVE_SPORTY;
+int GloveCT = GLOVE_HYDRA;
+int GloveT = GLOVE_LEATHER_WRAP;
 
 unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
 	/* https://github.com/sonicrules11/CSGO-skin-ID-dumper/blob/master/item_index.txt */
@@ -11,8 +11,8 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
     make_pair(WEAPON_KNIFE, cSkin(419, -1, KnifeCT, -1, 3, (char*)("Period Blood"), 0.0001f)), // Ruby Doppler
     make_pair(WEAPON_KNIFE_T, cSkin(38, -1, KnifeT, -1, 3, (char*)("I'm faded"), 0.0001f)), // Fade
     // Gloves
-    make_pair(GLOVE_CT, cSkin(10006, -1, GloveCT, -1, 3, nullptr, 0.0001f)),
-    make_pair(GLOVE_T, cSkin(10048, -1, GloveT, -1, 3, nullptr, 0.0001f)),
+    make_pair(GLOVE_CT, cSkin(10057, -1, GloveCT, -1, 3, nullptr, 0.0001f)), //
+    make_pair(GLOVE_T, cSkin(10021, -1, GloveT, -1, 3, nullptr, 0.0001f)), //
 	// Pistols
 	make_pair(WEAPON_DEAGLE, cSkin(711, -1, -1, -1, 0, nullptr, 0.0001f)), // Code Red
     make_pair(WEAPON_CZ75A, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)),
@@ -46,7 +46,7 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
 	make_pair(WEAPON_MAG7, cSkin(666, -1, -1, -1, 0, nullptr, 0.0001f)), // Hard Water
 	make_pair(WEAPON_NOVA, cSkin(590, -1, -1, -1, 0, nullptr, 0.0001f)), // Exo
 	make_pair(WEAPON_SAWEDOFF, cSkin(638, -1, -1, -1, 0, nullptr, 0.0001f)), // Wasteland Princess 
-	make_pair(WEAPON_XM1014, cSkin(654, -1, -1, -1, 0, nullptr, 0.0001f)), // 654
+	make_pair(WEAPON_XM1014, cSkin(654, -1, -1, -1, 0, nullptr, 0.0001f)), // Seasons
 	make_pair(WEAPON_M249, cSkin(648, -1, -1, -1, 0, nullptr, 0.0001f)), // Emerald Posion Dart
 	make_pair(WEAPON_NEGEV, cSkin(483, -1, -1, -1, 0, nullptr, 0.0001f)), // Loudmouth
 });
