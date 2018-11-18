@@ -162,6 +162,7 @@ enum class FontFeature: int
         GLOVE_LEATHER_WRAP = 5032,
         GLOVE_MOTORCYCLE = 5033,
         GLOVE_SPECIALIST = 5034,
+        GLOVE_HYDRA = 5035,
         GLOVE = GLOVE_T
     };
     
