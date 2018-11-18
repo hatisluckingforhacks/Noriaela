@@ -166,8 +166,7 @@ enum class FontFeature: int
         GLOVE = GLOVE_T
     };
     
-    enum EClassIds: int
-    {
+    enum class EClassIds : int {
         CAI_BaseNPC = 0,
         CAK47,
         CBaseAnimating,
@@ -260,6 +259,7 @@ enum class FontFeature: int
         CInfoLadderDismount,
         CInfoOverlayAccessor,
         CItem_Healthshot,
+        CItemDogtags,
         CKnife,
         CKnifeGG,
         CLightGlow,
@@ -280,6 +280,7 @@ enum class FontFeature: int
         CPlayerResource,
         CPointCamera,
         CPointCommentaryNode,
+        CPointWorldText,
         CPoseController,
         CPostProcessController,
         CPrecipitation,
@@ -419,7 +420,7 @@ enum class FontFeature: int
         SmokeTrail,
         SporeExplosion,
         SporeTrail
-    };
+};
     
     enum Bone: int
     {

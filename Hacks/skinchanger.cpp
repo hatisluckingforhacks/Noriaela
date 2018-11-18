@@ -15,7 +15,6 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
     make_pair(GLOVE_T, cSkin(10021, -1, GloveT, -1, 3, nullptr, 0.0001f)), //
 	// Pistols
 	make_pair(WEAPON_DEAGLE, cSkin(711, -1, -1, -1, 0, nullptr, 0.0001f)), // Code Red
-    make_pair(WEAPON_CZ75A, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)),
 	make_pair(WEAPON_ELITE, cSkin(710, -1, -1, -1, 0, nullptr, 0.0001f)), // Shred
 	make_pair(WEAPON_FIVESEVEN, cSkin(44, -1, -1, -1, 0, nullptr, 0.0001f)), // Case Hardended
 	make_pair(WEAPON_GLOCK, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade

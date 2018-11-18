@@ -36,7 +36,7 @@ public:
 		{WEAPON_KNIFE_URSUS, "models/weapons/v_knife_ursus.mdl"}, // Ursus Knife
 		{WEAPON_KNIFE_GYPSY_JACKKNIFE, "models/weapons/v_knife_gypsy_jackknife.mdl"}, // Navaja Knife
 		{WEAPON_KNIFE_STILETTO, "models/weapons/v_knife_stiletto.mdl"}, // Stiletto Knife
-		{WEAPON_KNIFE_WIDOWMAKER, "models/weapons/v_knife_widowmaker.mdl"}, // Talon Knife (Inspect animation is broken)
+		{WEAPON_KNIFE_WIDOWMAKER, "models/weapons/v_knife_widowmaker.mdl"}, // Talon Knife
     });
     unordered_map<int, string> GloveToModelMatrix = unordered_map<int, string>({
         {GLOVE_STUDDED_BLOODHOUND, "models/weapons/v_models/arms/glove_bloodhound/v_glove_bloodhound.mdl"},
@@ -63,9 +63,9 @@ public:
     };
     void FireEventClientSide(IGameEvent* event);
     void FindModels();
-    void Init();
     void ForceSkins();
     void FrameStageNotify(ClientFrameStage_t stage);
+    void Init();
     void ApplyCustomGloves();
     bool glovesUpdated = false;
 
