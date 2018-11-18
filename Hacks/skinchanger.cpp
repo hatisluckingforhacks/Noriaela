@@ -4,7 +4,6 @@ int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
 int KnifeT = WEAPON_KNIFE_BAYONET;
 int GloveCT = GLOVE_STUDDED_BLOODHOUND;
 int GloveT = GLOVE_SPORTY;
-//bool skinsLoaded = false;
 
 unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
 	/* https://github.com/sonicrules11/CSGO-skin-ID-dumper/blob/master/item_index.txt */
@@ -96,7 +95,6 @@ void cSkinchanger::ForceSkins() {
         if(pWeapons){
             for(int i = 0; pWeapons[i]; i++){
                 C_BaseAttributableItem* attributableItem = (C_BaseAttributableItem*)pEntList->GetClientEntityFromHandle(pWeapons[i]);
-                C_BaseAttributableItem* glove = (C_BaseAttributableItem*)pEntList->GetClientEntity(pLocalPlayer->GetWearables()[0] & 0xFFF);
                 if(attributableItem) {
                     int* Definition = attributableItem->GetItemDefinitionIndex();
 
