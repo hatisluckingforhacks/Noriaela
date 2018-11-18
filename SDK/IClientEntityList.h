@@ -264,6 +264,11 @@ public:
         return getvfunc<oGetClientEntity>(this, 3)(this, index);
     }
     
+    C_BaseEntity* GetClientEntityFromHandle(void* handle) {
+        typedef C_BaseEntity* (* oGetClientEntityFromHandle)(void*, void*);
+        return getvfunc<oGetClientEntityFromHandle>(this, 4)(this, handle);
+    }
+    
     C_BaseEntity* GetClientEntityFromHandle(CBaseHandle hHandle) {
         typedef C_BaseEntity* (* oGetClientEntityFromHandle)(void*, CBaseHandle);
         return getvfunc<oGetClientEntityFromHandle>(this, 4)(this, hHandle);

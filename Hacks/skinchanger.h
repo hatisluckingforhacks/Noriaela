@@ -19,7 +19,7 @@ public:
 
 class cSkinchanger {
 public:
-    static unordered_map<int, cSkin> SkinList;
+    static unordered_map<int, cSkin> Skins;
     static unordered_map<int, const char*> ModelList;
 
     unordered_map<int, string> KnifeToModelMatrix = unordered_map<int, string>({
@@ -37,8 +37,14 @@ public:
 		{WEAPON_KNIFE_GYPSY_JACKKNIFE, "models/weapons/v_knife_gypsy_jackknife.mdl"}, // Navaja Knife
 		{WEAPON_KNIFE_STILETTO, "models/weapons/v_knife_stiletto.mdl"}, // Stiletto Knife
 		{WEAPON_KNIFE_WIDOWMAKER, "models/weapons/v_knife_widowmaker.mdl"}, // Talon Knife (Inspect animation is broken)
-        {WEAPON_KNIFE, "models/weapons/v_knife_default_ct.mdl"}, // Default CT Knife (Only needed if you don't want to use a knife)
-        {WEAPON_KNIFE_T, "models/weapons/v_knife_default_t.mdl"} // Default T Knife (Only needed if you don't want to use a knife)
+    });
+    unordered_map<int, string> GloveToModelMatrix = unordered_map<int, string>({
+        {GLOVE_STUDDED_BLOODHOUND, "models/weapons/v_models/arms/glove_bloodhound/v_glove_bloodhound.mdl"},
+        {GLOVE_SPORTY, "models/weapons/v_models/arms/glove_sporty/v_glove_sporty.mdl"},
+        {GLOVE_SLICK, "models/weapons/v_models/arms/glove_slick/v_glove_slick.mdl"},
+        {GLOVE_LEATHER_WRAP, "models/weapons/v_models/arms/glove_handwrap_leathery/v_glove_handwrap_leathery.mdl"},
+        {GLOVE_MOTORCYCLE, "models/weapons/v_models/arms/glove_motorcycle/v_glove_motorcycle.mdl"},
+        {GLOVE_SPECIALIST, "models/weapons/v_models/arms/glove_specialist/v_glove_specialist.mdl"}
     });
 
     unordered_map<size_t, string> EntityQuality = {
@@ -58,7 +64,10 @@ public:
     void FindModels();
     void Init();
     void ForceSkins();
+    void ForceGloves();
     void FrameStageNotify(ClientFrameStage_t stage);
+    void ApplyCustomGloves(C_BaseEntity* local);
+    bool glovesUpdated = false;
 
     C_BaseEntity* pLocalPlayer = nullptr;
 

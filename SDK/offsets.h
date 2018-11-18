@@ -30,6 +30,7 @@ struct COffsets {
 	struct {
 		int m_hActiveWeapon;
 		int m_hMyWeapons;
+		int m_hMyWearables;
 	} DT_BaseCombatCharacter;
 
 	struct {

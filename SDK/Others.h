@@ -17,6 +17,8 @@ typedef void (*IsReadyCallbackFn) (void*);
 typedef ILauncherMgr* (*ILauncherMgrCreateFn) (void);
 typedef void (*StartDrawingFn) (void*);
 typedef void (*FinishDrawingFn) (void*);
+typedef int  (*RandomIntFn)(int, int);
+
 
 struct WeaponInfo_t {
     float m_flWeaponArmorRatio;
@@ -152,6 +154,15 @@ enum class FontFeature: int
 		WEAPON_KNIFE_GYPSY_JACKKNIFE = 520,
 		WEAPON_KNIFE_STILETTO = 522,
 		WEAPON_KNIFE_WIDOWMAKER = 523,
+        GLOVE_STUDDED_BLOODHOUND = 5027,
+        GLOVE_T = 5028,
+        GLOVE_CT = 5029,
+        GLOVE_SPORTY = 5030,
+        GLOVE_SLICK = 5031,
+        GLOVE_LEATHER_WRAP = 5032,
+        GLOVE_MOTORCYCLE = 5033,
+        GLOVE_SPECIALIST = 5034,
+        GLOVE = GLOVE_T
     };
     
     enum EClassIds: int

@@ -24,6 +24,13 @@ enum MoveType_t {
     MOVETYPE_MAX_BITS = 4
 };
 
+
+enum DataUpdateType_t
+{
+    DATA_UPDATE_CREATED = 0,
+    DATA_UPDATE_DATATABLE_CHANGED,
+};
+
 class ICollideable {
 public:
     virtual void pad0( );
@@ -59,10 +66,21 @@ public:
 class IClientNetworkable {
 public:
     virtual ~IClientNetworkable() {};
-    
+    void Release() {
+        typedef void (* oRelease)(void*);
+        return getvfunc<oRelease>(this, 1)(this);
+    }
     ClientClass* GetClientClass() {
         typedef ClientClass* (* oGetClientClass)(void*);
         return getvfunc<oGetClientClass>(this, 2)(this);
+    }
+    void PreDataUpdate(DataUpdateType_t updateType) {
+        typedef void (* oPreDataUpdate)(void*, DataUpdateType_t);
+        return getvfunc<oPreDataUpdate>(this, 6)(this, updateType);
+    }
+    void SetDestroyedOnRecreateEntities() {
+        typedef void (* oSetDestroyedOnRecreateEntities)(void*);
+        return getvfunc<oSetDestroyedOnRecreateEntities>(this, 13)(this);
     }
 };
 
@@ -82,6 +100,9 @@ public:
 
 class C_BaseEntity : public IClientEntity {
 public:
+    IClientNetworkable* GetNetworkable() {
+        return (IClientNetworkable*)((uintptr_t)this + 0x10);
+    }
     int GetId() {
         return *(int*)((uintptr_t)this + 0x94);
     }
@@ -215,6 +236,10 @@ public:
     
     float* GetLowerBodyYawTarget() {
         return (float*)((uintptr_t)this + offsets.DT_BasePlayer.m_flLowerBodyYawTarget);
+    }
+    
+    int* GetWearables() {
+        return (int*)((uintptr_t)this + offsets.DT_BaseCombatCharacter.m_hMyWearables);
     }
 };
 
