@@ -661,3 +661,6 @@ enum class FontFeature: int
 #define SEQUENCE_DAGGERS_HEAVY_MISS1 				12
     
 #define SEQUENCE_BOWIE_IDLE1 						1
+
+#define SEQUENCE_TALON_LOOKAT1                      14
+#define SEQUENCE_TALON_LOOKAT2                      15

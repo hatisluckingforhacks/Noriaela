@@ -12,7 +12,7 @@ public:
 	return getvfunc<const char*(*)(void*, const char*, int)>(this, 9)(this, szKeyName, 0);
 	}
 	void SetString( const char* szKeyName, const char* szValue ) {
-    getvfunc<void(*)(void*, const char*, const char*)>(this, 16)(this, szKeyName, szValue);
+    return getvfunc<void(*)(void*, const char*, const char*)>(this, 16)(this, szKeyName, szValue);
 	}
 };
 

@@ -1,7 +1,7 @@
 #include "skinchanger.h"
 
 int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
-int KnifeT = WEAPON_KNIFE_BAYONET;
+int KnifeT = WEAPON_KNIFE_KARAMBIT;
 int GloveCT = GLOVE_HYDRA;
 int GloveT = GLOVE_LEATHER_WRAP;
 
@@ -326,6 +326,12 @@ void HSequenceProxyFn(const CRecvProxyData *pDataConst, void *pStruct, void *pOu
             			m_nSequence = RandomSequence(12, 13);
             			break;
             	}
+            } else if(!strcmp(model_filename, "models/weapons/v_knife_widowmaker.mdl")) {
+                switch (m_nSequence) {
+                    case SEQUENCE_DEFAULT_LOOKAT01:
+                        m_nSequence = RandomSequence(SEQUENCE_TALON_LOOKAT1, SEQUENCE_TALON_LOOKAT2);
+                        break;
+                }
             }
             pData->m_Value.m_Int = m_nSequence;
         }
