@@ -16,6 +16,7 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
     make_pair(GLOVE_T, cSkin(10048, -1, GloveT, -1, 3, nullptr, 0.0001f)),
 	// Pistols
 	make_pair(WEAPON_DEAGLE, cSkin(711, -1, -1, -1, 0, nullptr, 0.0001f)), // Code Red
+    make_pair(WEAPON_CZ75A, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)),
 	make_pair(WEAPON_ELITE, cSkin(710, -1, -1, -1, 0, nullptr, 0.0001f)), // Shred
 	make_pair(WEAPON_FIVESEVEN, cSkin(44, -1, -1, -1, 0, nullptr, 0.0001f)), // Case Hardended
 	make_pair(WEAPON_GLOCK, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade
@@ -131,7 +132,7 @@ void cSkinchanger::ForceSkins() {
                             *attributableItem->GetFallbackWear() = skin.Wear;
                             *attributableItem->GetAccountID() = player_info.xuidlow;
 
-                            ApplyCustomGloves(pLocalPlayer);
+                            ApplyCustomGloves();
                         }
                     }
 
@@ -161,7 +162,9 @@ void cSkinchanger::ForceSkins() {
     }
 }
 
-void cSkinchanger::ApplyCustomGloves(C_BaseEntity* pLocal) {
+void cSkinchanger::ApplyCustomGloves() {
+    
+    C_BaseEntity* pLocal = (C_BaseEntity*)pEntList->GetClientEntity(pEngine->GetLocalPlayer());
     
     if (!pEntList->GetClientEntityFromHandle((void*)pLocal->GetWearables())) {
         for (ClientClass* pClass = pClient->GetAllClasses(); pClass; pClass = pClass->m_pNext) {
@@ -169,12 +172,12 @@ void cSkinchanger::ApplyCustomGloves(C_BaseEntity* pLocal) {
                 continue;
             
             int entry = (pEntList->GetHighestEntityIndex() + 1);
-            int    serial = RandomInt(0x0, 0xFFF);
+            int serial = RandomInt(0x0, 0xFFF);
             
             pClass->m_pCreateFn(entry, serial);
             pLocal->GetWearables()[0] = entry | serial << 16;
             
-            //glovesUpdated = true;
+            glovesUpdated = true;
             
             break;
         }
@@ -198,13 +201,11 @@ void cSkinchanger::ApplyCustomGloves(C_BaseEntity* pLocal) {
     
     if(GloveCT && pLocal->GetTeam() == TEAM_COUNTER_TERRORIST)
         *glove->GetItemDefinitionIndex() = GloveCT;
-    
     if(GloveT && pLocal->GetTeam() == TEAM_TERRORIST)
         *glove->GetItemDefinitionIndex() = GloveT;
     
     *glove->GetItemIDHigh() = -1;
     *glove->GetFallbackPaintKit() = gloveskin.Paintkit;
-    *glove->GetFallbackSeed() == gloveskin.Seed;
     *glove->GetFallbackWear() = gloveskin.Wear;
     *glove->GetAccountID() = LocalPlayerInfo.xuidlow;
     

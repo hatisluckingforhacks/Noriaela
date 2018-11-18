@@ -95,7 +95,7 @@ enum class FontFeature: int
         OBS_MODE_ROAMING = 6
     };
     
-    enum ItemDefinitionIndex: int
+    enum ItemDefinitionIndex: short
     {
         WEAPON_DEAGLE = 1,
         WEAPON_ELITE = 2,

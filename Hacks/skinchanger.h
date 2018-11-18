@@ -64,9 +64,8 @@ public:
     void FindModels();
     void Init();
     void ForceSkins();
-    void ForceGloves();
     void FrameStageNotify(ClientFrameStage_t stage);
-    void ApplyCustomGloves(C_BaseEntity* local);
+    void ApplyCustomGloves();
     bool glovesUpdated = false;
 
     C_BaseEntity* pLocalPlayer = nullptr;
