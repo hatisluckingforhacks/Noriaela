@@ -20,6 +20,10 @@ void InitializeVMTs() {
     game_event_vmt = new VMT(pGameEventManager);
     testvmt = new VMT(pPanel);
     client_vmt = new VMT(pClient);
+    
+    void* handle = dlopen("./csgo/bin/osx64/client_panorama.dylib", RTLD_NOLOAD | RTLD_NOW);
+    RandomInt = reinterpret_cast<RandomIntFn>(dlsym(handle, "RandomInt"));
+    dlclose(handle);
 }
 
 extern bool hkFireEventClientSide(void* thisptr, IGameEvent* event);
@@ -35,7 +39,8 @@ void InitializeHooks() {
 }
 
 void PrintInfo() {
-    pCvar->ConsoleColorPrintf(Color::Red(), "Noriaela Version 2\n");
+    pCvar->ConsoleColorPrintf(Color::Red(), "Noriaela Version 2.5\n");
     pCvar->ConsoleColorPrintf(Color::Red(), "Coded by :\n");
     pCvar->ConsoleColorPrintf(Color::Red(), "Warlauke\n");
+    pCvar->ConsoleColorPrintf(Color::Green(), "Gloves added. Kind of\n");
 }

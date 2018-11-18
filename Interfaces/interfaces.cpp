@@ -14,6 +14,9 @@ IClientMode* pClientMode = nullptr;
 
 RecvVarProxyFn g_pSequence  = nullptr;
 
+RandomIntFn RandomInt;
+
+
 VMT* game_event_vmt = nullptr;
 VMT* testvmt = nullptr;
 VMT* client_vmt = nullptr;

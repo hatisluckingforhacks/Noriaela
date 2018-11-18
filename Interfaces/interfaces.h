@@ -10,6 +10,8 @@ extern IEngineTrace* pEngineTrace;
 extern IClientMode* pClientMode;
 extern IGameEventManager2* pGameEventManager;
 
+extern RandomIntFn RandomInt;
+
 extern RecvVarProxyFn g_pSequence;
 extern VMT* game_event_vmt;
 extern VMT* testvmt;
