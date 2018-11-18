@@ -111,6 +111,7 @@ enum class FontFeature: int
         WEAPON_M4A1 = 16,
         WEAPON_MAC10 = 17,
         WEAPON_P90 = 19,
+        WEAPON_MP5_SD = 23,
         WEAPON_UMP45 = 24,
         WEAPON_XM1014 = 25,
         WEAPON_BIZON = 26,

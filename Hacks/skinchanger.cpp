@@ -14,13 +14,15 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
     make_pair(GLOVE_CT, cSkin(10057, -1, GloveCT, -1, 3, nullptr, 0.0001f)), //
     make_pair(GLOVE_T, cSkin(10021, -1, GloveT, -1, 3, nullptr, 0.0001f)), //
 	// Pistols
+    make_pair(WEAPON_CZ75A, cSkin(297, -1, -1, -1, 0, nullptr, 0.0001f)), // Tuxedo
 	make_pair(WEAPON_DEAGLE, cSkin(711, -1, -1, -1, 0, nullptr, 0.0001f)), // Code Red
 	make_pair(WEAPON_ELITE, cSkin(710, -1, -1, -1, 0, nullptr, 0.0001f)), // Shred
 	make_pair(WEAPON_FIVESEVEN, cSkin(44, -1, -1, -1, 0, nullptr, 0.0001f)), // Case Hardended
 	make_pair(WEAPON_GLOCK, cSkin(38, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade
 	make_pair(WEAPON_HKP2000, cSkin(211, -1, -1, 1337, 0, nullptr, 0.0001f)), // Ocean Foam (P2000)
 	make_pair(WEAPON_P250, cSkin(102, -1, -1, -1, 0, nullptr, 0.0001f)), // Whiteout
-	make_pair(WEAPON_TEC9, cSkin(36, -1, -1, -1, 0, nullptr, 0.0001f)), // Ossified
+    make_pair(WEAPON_REVOLVER, cSkin(12, -1, -1, -1, 0, nullptr, 0.0001f)), // Crimson Web
+    make_pair(WEAPON_TEC9, cSkin(36, -1, -1, -1, 0, nullptr, 0.0001f)), // Ossified
 	make_pair(WEAPON_USP_SILENCER, cSkin(657, -1, -1, -1, 0, nullptr, 0.0001f)), // Blueprint
 	// Rifles
 	make_pair(WEAPON_AK47, cSkin(316, -1, -1, -1, 0, (char*)("PussyDestroyer15"), 0.0001f)), // Jaguar
@@ -39,6 +41,7 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
 	make_pair(WEAPON_MP7, cSkin(627, -1, -1, -1, 0, nullptr, 0.0001f)), // Cirrus
 	make_pair(WEAPON_MP9, cSkin(549, -1, -1, -1, 0, nullptr, 0.0001f)), // MP9
 	make_pair(WEAPON_P90, cSkin(636, -1, -1, -1, 0, nullptr, 0.0001f)), // Shallow Grave
+    make_pair(WEAPON_MP5_SD, cSkin(39, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade
 	make_pair(WEAPON_UMP45, cSkin(436, -1, -1, -1, 0, nullptr, 0.0001f)), // Grand Prix
 	make_pair(WEAPON_BIZON, cSkin(203, -1, -1, -1, 0, nullptr, 0.0001f)), // Rust Coat
 	// Heavy
