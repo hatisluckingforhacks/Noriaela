@@ -133,6 +133,7 @@ void cSkinchanger::ForceSkins() {
                             *attributableItem->GetAccountID() = player_info.xuidlow;
 
                             ApplyCustomGloves();
+                            Init();
                         }
                     }
 
