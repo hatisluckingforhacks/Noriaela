@@ -23,6 +23,7 @@ public:
     static unordered_map<int, const char*> ModelList;
 
     unordered_map<int, string> KnifeToModelMatrix = unordered_map<int, string>({
+    	{WEAPON_KNIFE_GHOST, "models/weapons/v_knife_ghost.mdl"}, // Ghost Knife
         {WEAPON_KNIFE_BAYONET, "models/weapons/v_knife_bayonet.mdl"}, // Bayonet Knife
         {WEAPON_KNIFE_FLIP, "models/weapons/v_knife_flip.mdl"}, // Flip Knife
         {WEAPON_KNIFE_GUT, "models/weapons/v_knife_gut.mdl"}, // Gut Knife

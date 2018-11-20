@@ -1,5 +1,4 @@
-#pragma once
-
+#pragma once 
 class IMaterialVar;
 typedef uint64_t VertexFormat_t;
 

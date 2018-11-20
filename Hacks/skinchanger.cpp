@@ -1,8 +1,8 @@
 #include "skinchanger.h"
 
 int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
-int KnifeT = WEAPON_KNIFE_KARAMBIT;
-int GloveCT = GLOVE_HYDRA;
+int KnifeT = WEAPON_KNIFE_GHOST;
+int GloveCT = GLOVE_LEATHER_WRAP;
 int GloveT = GLOVE_LEATHER_WRAP;
 
 unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
@@ -11,7 +11,7 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
     make_pair(WEAPON_KNIFE, cSkin(419, -1, KnifeCT, -1, 3, (char*)("Period Blood"), 0.0001f)), // Ruby Doppler
     make_pair(WEAPON_KNIFE_T, cSkin(38, -1, KnifeT, -1, 3, (char*)("I'm faded"), 0.0001f)), // Fade
     // Gloves
-    make_pair(GLOVE_CT, cSkin(10057, -1, GloveCT, -1, 3, nullptr, 0.0001f)), //
+    make_pair(GLOVE_CT, cSkin(10021, -1, GloveCT, -1, 3, nullptr, 0.0001f)), //
     make_pair(GLOVE_T, cSkin(10021, -1, GloveT, -1, 3, nullptr, 0.0001f)), //
 	// Pistols
     make_pair(WEAPON_CZ75A, cSkin(297, -1, -1, -1, 0, nullptr, 0.0001f)), // Tuxedo
