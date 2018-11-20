@@ -16,7 +16,6 @@ To build:
 * **Mac OS**: `make`
 
 Injection can be done by injecting it with your favorite shared library injector.
-* **Example**: `sudo ./osxinj csgo_osx64 libNoriaela.dylib`
 
 ### Credit
 https://github.com/ToxicOverflow/Microwave-Open-Source
