@@ -1,7 +1,7 @@
 #include "skinchanger.h"
 
 int KnifeCT = WEAPON_KNIFE_M9_BAYONET;
-int KnifeT = WEAPON_KNIFE_GHOST;
+int KnifeT = WEAPON_KNIFE_KARAMBIT;
 int GloveCT = GLOVE_LEATHER_WRAP;
 int GloveT = GLOVE_LEATHER_WRAP;
 
@@ -39,9 +39,9 @@ unordered_map<int, cSkin> cSkinchanger::Skins = unordered_map<int, cSkin>( {
 	// SMGs
 	make_pair(WEAPON_MAC10, cSkin(433, -1, -1, -1, 0, nullptr, 0.0001f)), // Neon Rider
 	make_pair(WEAPON_MP7, cSkin(627, -1, -1, -1, 0, nullptr, 0.0001f)), // Cirrus
-	make_pair(WEAPON_MP9, cSkin(549, -1, -1, -1, 0, nullptr, 0.0001f)), // MP9
+	make_pair(WEAPON_MP9, cSkin(549, -1, -1, -1, 0, nullptr, 0.0001f)), // Bioleak
 	make_pair(WEAPON_P90, cSkin(636, -1, -1, -1, 0, nullptr, 0.0001f)), // Shallow Grave
-    make_pair(WEAPON_MP5_SD, cSkin(39, -1, -1, -1, 0, nullptr, 0.0001f)), // Fade
+    make_pair(WEAPON_MP5_SD, cSkin(39, -1, -1, -1, 0, nullptr, 0.0001f)), // Bulldozer
 	make_pair(WEAPON_UMP45, cSkin(436, -1, -1, -1, 0, nullptr, 0.0001f)), // Grand Prix
 	make_pair(WEAPON_BIZON, cSkin(203, -1, -1, -1, 0, nullptr, 0.0001f)), // Rust Coat
 	// Heavy
